@@ -6,8 +6,8 @@ const packageJson = require("../util/package-json");
 /**
  * An abstraction for "gulp prettiereslint", which handles running prettier-eslint against src
  * if the package.json's settings.formatAndFixCode is set to true.
- * 
- * @param {callback} done 
+ *
+ * @param {callback} done
  */
 function prettiereslint(done) {
   prettiereslintAsync().then(() => {
