@@ -19,7 +19,7 @@ async function prettiereslintAsync() {
   const json = packageJson.parse();
 
   if (json.settings != null && json.settings.formatAndFixCode == true) {
-    cli.execute(
+    await cli.execute(
       `node_modules/.bin/./prettier-eslint "src/**/*.js" --write -l info`
     );
   }

@@ -15,7 +15,8 @@
   "homepage": "https://github.com/jvalentino/gulp-all-in-one-template#readme",
   "settings": {
     "requireCodeCoverageAbove": 85,
-    "formatAndFixCode": true
+    "formatAndFixCode": true,
+    "securityFailsOnSeverity": "low"
   },
   "devDependencies": {
     "@sinonjs/referee-sinon": "10.1.0",
@@ -26,6 +27,7 @@
     "mocha": "10.0.0",
     "nyc": "15.1.0",
     "prettier-eslint-cli": "6.0.1",
+    "retire": "3.0.7",
     "sinon": "14.0.0"
   }
 }
