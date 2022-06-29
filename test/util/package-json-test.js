@@ -16,7 +16,7 @@ describe("package-json.js", function() {
     })
 
     it("test parse", function() {
-        const json = subject.parse("./test/util/package-example.json");    
+        const json = subject.parse(__dirname + "/package-example.json");    
     
         expect( json.settings.requireCodeCoverageAbove).to.equal(100);
     });

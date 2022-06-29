@@ -15,7 +15,7 @@ async function testAsync() {
    
     await cli.execute(command);
     
-    console.log('parsing json');
+
     const json = packageJson.parse();
     if (json.settings != null && json.settings.requireCodeCoverageAbove != null) {
         await cli.execute(`node_modules/.bin/./c8 check-coverage --lines ${json.settings.requireCodeCoverageAbove}`);

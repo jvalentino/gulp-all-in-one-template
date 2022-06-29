@@ -17,6 +17,7 @@ describe("test-plugin.js", function() {
   
     afterEach(() => {
         cliMock.restore();
+        sinon.restore();
     })
   
     it("test test when no quality gate", function(done) {
