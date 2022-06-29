@@ -1,0 +1,19 @@
+{
+  "name": "gulp-all-in-one-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvalentino/gulp-all-in-one-template.git"
+  },
+  "author": "John Valentino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvalentino/gulp-all-in-one-template/issues"
+  },
+  "homepage": "https://github.com/jvalentino/gulp-all-in-one-template#readme",
+  "devDependencies": {
+    "gulp": "4.0.2"
+  }
+}
