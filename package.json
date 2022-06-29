@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/jvalentino/gulp-all-in-one-template#readme",
   "settings": {
-    "requireCodeCoverageAbove": 85
+    "requireCodeCoverageAbove": 85,
+    "formatAndFixCode": true
   },
   "devDependencies": {
     "@sinonjs/referee-sinon": "10.1.0",
