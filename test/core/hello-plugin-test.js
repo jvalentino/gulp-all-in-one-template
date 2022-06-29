@@ -1,6 +1,5 @@
-
-var expect    = require("chai").expect;
-var sinon = require('sinon');
+const expect    = require("chai").expect;
+const sinon = require('sinon');
 const referee = require("@sinonjs/referee");
 const assert = referee.assert;
 

@@ -2,8 +2,8 @@
 
 const fs = require("fs");
 
-function parse() {
-    const text = fs.readFileSync('package.json');
+function parse(file="package.json") {
+    const text = fs.readFileSync(file);
     const json = JSON.parse(text);
     return json;
 }

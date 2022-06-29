@@ -1,7 +1,7 @@
 "use strict";
 
 const core = require("./src/core/hello-plugin");
-const testPlugin = require("./src/build/test-plugin")
+const testPlugin = require("./src/buildsys/test-plugin")
 
 
 module.exports = {
