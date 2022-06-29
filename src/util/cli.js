@@ -1,7 +1,7 @@
 const childProcess = require("child_process");
 const spawn = childProcess.spawn;
 
-async function execute(command, env = {}, directory = ".") {
+async function execute(command, captureOutput=false, env = {}, directory = ".") {
     const commands = command.split(" ");
     const firstCommand = commands[0];
     const followingCommands = [];
@@ -18,7 +18,15 @@ async function execute(command, env = {}, directory = ".") {
     return new Promise(function(resolve, reject) {
         const options = {
             cwd: directory
+            
+            
         };
+
+        if (captureOutput == false) {
+            options.shell = true;
+            options.stdio = 'inherit';
+        }
+
         // FIXME: This doesn't actually work
         if (env !== {}) {
             //options["env"] = env;
@@ -26,18 +34,21 @@ async function execute(command, env = {}, directory = ".") {
         const cmd = spawn(firstCommand, followingCommands, options);
 
         let text = "";
-        cmd.stdout.on("data", function(data) {
-            const output = `${data}`;
-            console.log(output.trim());
-            text += output;
-        });
 
-        cmd.stderr.on("data", function(data) {
-            const output = `${data}`;
-            console.log(output.trim());
-            text += output;
+        if (captureOutput) {
+            cmd.stdout.on("data", function(data) {
+                const output = `${data}`;
+                console.log(output.trim());
+                text += output;
+            });
 
-        });
+            cmd.stderr.on("data", function(data) {
+                const output = `${data}`;
+                console.log(output.trim());
+                text += output;
+
+            });
+        }
 
         cmd.on("exit", function(code) {
             console.log("exit code: " + code);
