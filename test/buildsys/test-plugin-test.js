@@ -31,7 +31,24 @@ describe("test-plugin.js", function() {
         // then
         cliMock.verify();
     });
-  
+
+    /* FIXME: Can't figure out why the second call always returns false
+    it("test test when quality gate", function(done) {
+        // given
+        const cliStub = sinon.stub(cli, "execute");
+        //cliMock.expects("execute").atLeast(1).withExactArgs("node_modules/.bin/./c8 node_modules/.bin/./mocha --reporter spec ./test --recursive");
+        sinon.stub(packageJson, 'parse').returns({settings:{requireCodeCoverageAbove:55}});
+        //cliMock.expects("execute").atLeast(1).withExactArgs("node_modules/.bin/./c8 check-coverage --lines 55");
+
+        // when
+        subject.test(done);
+
+        // then
+        console.log(cliStub.calledWith("node_modules/.bin/./c8 node_modules/.bin/./mocha --reporter spec ./test --recursive"));
+        console.log(cliStub.calledWith(`node_modules/.bin/./c8 check-coverage --lines 55`));
+        cliMock.verify();
+    });
+  */
     
   
   });
