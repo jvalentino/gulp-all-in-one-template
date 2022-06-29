@@ -3,7 +3,7 @@
 const cli = require("../util/cli");
 const packageJson = require("../util/package-json");
 
-function test(done) {
+function test(done) {    
     testAsync().then( ()=>{
         done();
     });
@@ -11,17 +11,18 @@ function test(done) {
 }
 
 async function testAsync() {
-
     const command = "node_modules/.bin/./c8 node_modules/.bin/./mocha --reporter spec ./test --recursive";
+   
     await cli.execute(command);
     
+    console.log('parsing json');
     const json = packageJson.parse();
     if (json.settings != null && json.settings.requireCodeCoverageAbove != null) {
         await cli.execute(`node_modules/.bin/./c8 check-coverage --lines ${json.settings.requireCodeCoverageAbove}`);
     }
 }
 
-module.exports = {
+module.exports = { 
     test: test
 }
 
