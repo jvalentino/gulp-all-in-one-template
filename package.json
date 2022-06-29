@@ -13,13 +13,20 @@
     "url": "https://github.com/jvalentino/gulp-all-in-one-template/issues"
   },
   "homepage": "https://github.com/jvalentino/gulp-all-in-one-template#readme",
+  "settings": {
+    "requireCodeCoverageAbove": 10
+  },
   "devDependencies": {
     "@sinonjs/referee-sinon": "10.1.0",
-    "c8": "^7.11.3",
+    "c8": "7.11.3",
     "chai": "4.3.6",
     "gulp": "4.0.2",
     "mocha": "10.0.0",
     "nyc": "15.1.0",
-    "sinon": "14.0.0"
+    "sinon": "14.0.0",
+    "fs": "0.0.1-security"
+  },
+  "dependencies": {
+    
   }
 }
